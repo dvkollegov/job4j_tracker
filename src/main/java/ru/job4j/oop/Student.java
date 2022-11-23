@@ -1,21 +1,33 @@
 package ru.job4j.oop;
 
+import java.util.Date;
+
 public class Student {
-    public void music() {
-        System.out.println("Tra tra tra");
+    private String name;
+    private String group;
+    private Date date;
+
+    public String getName() {
+        return name;
     }
 
-    public void song() {
-        System.out.println("I believe I can fly");
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public static void main(String[] args) {
-        Student petya = new Student();
-        petya.music();
-        petya.music();
-        petya.music();
-        petya.song();
-        petya.song();
-        petya.song();
+    public String getGroup() {
+        return group;
+    }
+
+    public void setGroup(String group) {
+        this.group = group;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 }
