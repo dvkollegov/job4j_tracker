@@ -10,4 +10,5 @@ public class Train implements Vehicle {
     public void fuelGrade() {
         System.out.println(getClass().getSimpleName() + " использует электрический ток");
     }
+
 }

@@ -10,4 +10,5 @@ public class Car implements Vehicle {
     public void fuelGrade() {
         System.out.println(getClass().getSimpleName() + " использует АИ-92");
     }
+
 }
