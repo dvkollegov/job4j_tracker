@@ -2,6 +2,7 @@ package ru.job4j.tracker;
 
 public class CreateItem implements UserAction {
     private final Output out;
+
     public CreateItem(Output out) {
         this.out = out;
     }
