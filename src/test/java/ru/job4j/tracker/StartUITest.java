@@ -21,9 +21,7 @@ public class StartUITest {
     @Test
     public void whenReplaceItem() {
         Tracker tracker = new Tracker();
-        /* ƒобавим в tracker новую за€вку */
         Item item = tracker.add(new Item("Replaced item"));
-        /* ¬ходные данные должны содержать ID добавленной за€вки item.getId() */
         String replacedName = "New item name";
         String id = String.valueOf(item.getId());
         Input in = new StubInput(
