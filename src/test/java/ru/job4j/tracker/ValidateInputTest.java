@@ -31,13 +31,13 @@ public class ValidateInputTest {
     public void whenMultipleValidInput() {
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] {"0", "0"}
+                new String[] {"0", "1"}
         );
         ValidateInput input = new ValidateInput(out, in);
         int selected = input.askInt("Enter menu:");
-        int selected1 = input.askInt("Enter menu:");
+        int selected1 = input.askInt("=== Create a new Item ===");
         assertThat(selected).isEqualTo(0);
-        assertThat(selected1).isEqualTo(0);
+        assertThat(selected1).isEqualTo(1);
     }
 
     @Test
