@@ -11,60 +11,38 @@ public class PasswordValidator {
         if (isAbuseText(password)) {
             throw new IllegalArgumentException("Password shouldn't contain substrings: qwerty, 12345, password, admin, user");
         }
-        if (!isUpperLetter(password)) {
+        char[] array = password.toCharArray();
+        int upperLetter = 0;
+        int lowerLetter = 0;
+        int digit = 0;
+        int specialSymbol = 0;
+        for (char c : array) {
+            if (Character.isUpperCase(c)) {
+                upperLetter++;
+            }
+            if (Character.isLowerCase(c)) {
+                lowerLetter++;
+            }
+            if (Character.isDigit(c)) {
+                digit++;
+            }
+            if (Character.isLetterOrDigit(c)) {
+                specialSymbol++;
+            }
+        }
+        if (upperLetter == 0) {
             throw new IllegalArgumentException("Password should contain at least one uppercase letter");
         }
-        if (!isLowerLetter(password)) {
+        if (lowerLetter == 0) {
             throw new IllegalArgumentException("Password should contain at least one lowercase letter");
         }
-        if (!isDigit(password)) {
+        if (digit == 0) {
             throw new IllegalArgumentException("Password should contain at least one figure");
         }
-        if (!isSpecialSymbol(password)) {
+        if (specialSymbol == array.length) {
             throw new IllegalArgumentException("Password should contain at least one special symbol");
         }
         return password;
-    }
-
-    public static boolean isUpperLetter(String password) {
-        char[] array = password.toCharArray();
-        for (char c : array) {
-            if (Character.isUpperCase(c)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public static boolean isDigit(String password) {
-        char[] array = password.toCharArray();
-        for (char c : array) {
-            if (Character.isDigit(c)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public static boolean isLowerLetter(String password) {
-        char[] array = password.toCharArray();
-        for (char c : array) {
-            if (Character.isLowerCase(c)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public static boolean isSpecialSymbol(String password) {
-        char[] array = password.toCharArray();
-        int count = 0;
-        for (char c : array) {
-            if (Character.isLetterOrDigit(c)) {
-                count++;
-            }
-        }
-        return count < array.length;
     }
 
     public static boolean isAbuseText(String password) {
