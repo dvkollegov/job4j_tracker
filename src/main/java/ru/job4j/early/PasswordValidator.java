@@ -15,7 +15,6 @@ public class PasswordValidator {
         int upperLetter = 0;
         int lowerLetter = 0;
         int digit = 0;
-        int specialSymbol = 0;
         for (char c : array) {
             if (Character.isUpperCase(c)) {
                 upperLetter++;
@@ -26,6 +25,12 @@ public class PasswordValidator {
             if (Character.isDigit(c)) {
                 digit++;
             }
+            if (upperLetter > 0 && lowerLetter > 0 && digit > 0) {
+                break;
+            }
+        }
+        int specialSymbol = 0;
+        for (char c : array) {
             if (Character.isLetterOrDigit(c)) {
                 specialSymbol++;
             }
