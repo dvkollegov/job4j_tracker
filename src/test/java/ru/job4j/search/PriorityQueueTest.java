@@ -17,10 +17,10 @@ public class PriorityQueueTest {
     @Test
     public void whenHigherPriorityThird() {
         PriorityQueue queue = new PriorityQueue();
-        queue.put(new Task("low", 4));
-        queue.put(new Task("urgent", 2));
-        queue.put(new Task("extra", 1));
         queue.put(new Task("middle", 3));
+        queue.put(new Task("urgent", 2));
+        queue.put(new Task("low", 4));
+        queue.put(new Task("extra", 1));
         Task result = queue.take();
         assertThat(result.getDesc()).isEqualTo("extra");
     }
