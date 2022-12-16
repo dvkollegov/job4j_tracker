@@ -27,4 +27,5 @@ class ItemDescByNameTest {
         );
         assertThat(items).isEqualTo(expected);
     }
+
 }

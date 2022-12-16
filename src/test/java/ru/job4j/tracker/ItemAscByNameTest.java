@@ -27,4 +27,5 @@ class ItemAscByNameTest {
         );
         assertThat(items).isEqualTo(expected);
     }
+
 }
