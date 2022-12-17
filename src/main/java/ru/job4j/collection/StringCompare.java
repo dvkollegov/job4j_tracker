@@ -11,9 +11,9 @@ public class StringCompare implements Comparator<String> {
             if (rsl != 0) {
                 break;
             }
-            if (o1.length() != o2.length()) {
-                rsl = Integer.compare(o1.length(), o2.length());
-            }
+        }
+        if (o1.length() != o2.length() && rsl == 0) {
+            rsl = Integer.compare(o1.length(), o2.length());
         }
         return rsl;
     }
