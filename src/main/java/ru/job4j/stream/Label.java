@@ -53,4 +53,5 @@ public class Label {
                 + ", price=" + price
                 + '}';
     }
+
 }
