@@ -10,5 +10,4 @@ public class School {
                 .filter(predict::test)
                 .collect(Collectors.toList());
     }
-
 }
